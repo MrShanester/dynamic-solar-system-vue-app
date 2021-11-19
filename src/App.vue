@@ -4,6 +4,10 @@
       <router-link to="/">Home</router-link>
       |
       <router-link to="/Signup">Sign-Up</router-link>
+      |
+      <router-link to="/Login">Log In</router-link>
+      |
+      <router-link to="/Logout">Log Out</router-link>
     </div>
     <router-view />
   </div>
