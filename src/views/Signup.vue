@@ -37,6 +37,7 @@
 <style scoped>
 .signup {
   text-align: center;
+  color: whitesmoke;
 }
 </style>
 

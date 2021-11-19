@@ -24,14 +24,19 @@
 
 #nav {
   padding: 30px;
+  color: white;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #c1c1c1;
 }
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+body {
+  background-image: url(assets/webb-dark.png);
 }
 </style>
