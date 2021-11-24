@@ -12,7 +12,7 @@
             <h2>Create your worlds, your way.</h2>
 
             <div class="btns">
-              <a href="#menu" class="btn-menu animated fadeInUp scrollto">Get Started</a>
+              <a href="/Login" class="btn-menu animated fadeInUp scrollto">Get Started</a>
             </div>
           </div>
         </div>
@@ -37,9 +37,9 @@ export default {
       systems: [],
     };
   },
-  created: function () {
-    this.indexSystems();
-  },
+  // created: function () {
+  //   this.indexSystems();
+  // },
   methods: {
     indexSystems: function () {
       axios.get("/systems").then((response) => {
