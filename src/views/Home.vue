@@ -12,7 +12,12 @@
             <h2>Create your worlds, your way.</h2>
 
             <div class="btns">
-              <a href="/Login" class="btn-menu animated fadeInUp scrollto">Get Started</a>
+              <div v-if="isLoggedIn()">
+                <a href="/Login" class="btn-menu animated fadeInUp scrollto">Get Started</a>
+              </div>
+              <div v-else>
+                <a href="/SystemIndex" class="btn-menu animated fadeInUp scrollto">My Systems</a>
+              </div>
             </div>
           </div>
         </div>
@@ -29,22 +34,22 @@
 </style>
 
 <script>
-import axios from "axios";
-
 export default {
   data: function () {
     return {
-      systems: [],
+      flashMessage: "",
     };
   },
-  // created: function () {
-  //   this.indexSystems();
-  // },
   methods: {
-    indexSystems: function () {
-      axios.get("/systems").then((response) => {
-        this.systems = response.data;
-      });
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    reload: function () {
+      location.reload();
     },
   },
 };

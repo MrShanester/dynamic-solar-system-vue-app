@@ -29,15 +29,27 @@
         <input type="password" v-model="newUserParams.password_confirmation" />
         <p></p>
       </div>
-      <input type="submit" value="Submit" />
+      <input class="classy" type="submit" value="Sign-Up" />
     </form>
   </div>
 </template>
 
 <style scoped>
 .signup {
+  margin-top: 125px;
   text-align: center;
   color: whitesmoke;
+}
+.classy {
+  border: 2px solid #645ad4;
+  border-radius: 50px;
+  background: #201f21;
+  color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+.classy:hover {
+  background: #645ad4;
+  color: #fff;
 }
 </style>
 

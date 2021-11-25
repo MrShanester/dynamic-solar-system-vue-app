@@ -5,6 +5,7 @@ import Signup from "../views/Signup.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Example from "../views/Example.vue";
+import SystemIndex from "../views/SystemIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: "/Example",
     name: "Example",
     component: Example,
+  },
+  {
+    path: "/SystemIndex",
+    name: "SystemIndex",
+    component: SystemIndex,
   },
 ];
 

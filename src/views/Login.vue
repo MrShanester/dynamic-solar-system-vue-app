@@ -19,6 +19,12 @@
       <p></p>
 
       <input class="classy" type="submit" value="Log In" />
+      <p></p>
+      <label>Or</label>
+      <p>Sign Up if you don't have an account:</p>
+      <p></p>
+
+      <button v-on:click="signUp()" class="classy">Take me to Sign-Up</button>
     </form>
   </div>
 </template>
@@ -68,6 +74,9 @@ export default {
           this.email = "";
           this.password = "";
         });
+    },
+    signUp: function () {
+      this.$router.push("/Signup");
     },
   },
 };
