@@ -8,7 +8,9 @@
     <h2>Planets in {{ system.name }}</h2>
     <p></p>
     <div v-for="planet in planets" v-bind:key="planet.id">
-      <h2>{{ planet.name }}</h2>
+      <router-link v-bind:to="`/planets/${planet.id}`">
+        <h2>{{ planet.name }}</h2>
+      </router-link>
     </div>
     <p></p>
     <router-link v-bind:to="`/SystemIndex`">

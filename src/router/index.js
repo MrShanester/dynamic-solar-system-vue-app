@@ -9,6 +9,7 @@ import SystemIndex from "../views/SystemIndex.vue";
 import NewSystem from "../views/NewSystem.vue";
 import SystemShow from "../views/SystemShow.vue";
 import SystemEdit from "../views/SystemEdit.vue";
+import PlanetShow from "../views/PlanetShow.vue";
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,11 @@ const routes = [
     path: "/systems/:id/edit",
     name: "SystemEdit",
     component: SystemEdit,
+  },
+  {
+    path: "/planets/:id",
+    name: "PlanetShow",
+    component: PlanetShow,
   },
 ];
 
