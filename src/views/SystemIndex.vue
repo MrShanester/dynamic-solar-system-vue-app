@@ -1,11 +1,19 @@
 <template>
   <div class="systemindex">
     <h1>Hello, {{ this.name }}</h1>
+    <p></p>
+    <p></p>
+
+    <h2>Your Systems:</h2>
     <div v-for="system in systems" v-bind:key="system.id">
       <router-link v-bind:to="`/systems/${system.id}`">
         <h2>{{ system.name }}</h2>
       </router-link>
     </div>
+    <p></p>
+    <p></p>
+    <p></p>
+
     <router-link v-bind:to="`/NewSystem`">
       <button>Create New System</button>
     </router-link>
