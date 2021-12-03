@@ -1,22 +1,38 @@
 <template>
   <div class="systemindex">
-    <h1>Hello, {{ this.name }}</h1>
+    <h1 id="header">Welcome, {{ this.name }}</h1>
     <p></p>
     <p></p>
 
-    <h2>Your Systems:</h2>
-    <div v-for="system in systems" v-bind:key="system.id">
-      <router-link v-bind:to="`/systems/${system.id}`">
-        <h2>{{ system.name }}</h2>
-      </router-link>
-    </div>
+    <section id="menu" class="menu section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <!-- <h2>Menu</h2> -->
+          <p>Your Systems</p>
+        </div>
+        <div v-for="system in systems" v-bind:key="system.id">
+          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-6 menu-item">
+              <img v-bind:src="system.image" class="menu-img" v-bind:alt="`No Image`" />
+              <div class="menu-content">
+                <router-link v-bind:to="`/systems/${system.id}`">
+                  <a href="#">{{ system.name }}</a>
+                </router-link>
+              </div>
+              <div class="menu-ingredients">{{ system.description }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="btns">
+          <router-link v-bind:to="`/NewSystem`">
+            <a class="btn-menu animated fadeInUp scrollto">Create New System</a>
+          </router-link>
+        </div>
+      </div>
+    </section>
     <p></p>
     <p></p>
     <p></p>
-
-    <router-link v-bind:to="`/NewSystem`">
-      <button>Create New System</button>
-    </router-link>
   </div>
 </template>
 
@@ -25,6 +41,12 @@
   margin-top: 125px;
   text-align: center;
   color: whitesmoke;
+}
+
+#header {
+  margin-left: 100px;
+  text-align: left;
+  color: wheat;
 }
 </style>
 
