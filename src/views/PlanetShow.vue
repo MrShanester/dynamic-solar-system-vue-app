@@ -6,9 +6,12 @@
     <p></p>
     <small>{{ planet.description }}</small>
     <p></p>
-    <router-link v-bind:to="`/SystemIndex`">
-      <button>Home</button>
+    <router-link v-bind:to="`/planets/${planet.id}/edit`">
+      <button>Edit Planet</button>
     </router-link>
+    <p></p>
+
+    <button v-on:click="$router.go(-1)">Home</button>
   </div>
 </template>
 
