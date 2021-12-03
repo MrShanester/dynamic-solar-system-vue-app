@@ -52,7 +52,7 @@ export default {
       });
     },
     planetsShow: function () {
-      axios.get("/planets").then((response) => {
+      axios.get("/planets/index/" + this.$route.params.id).then((response) => {
         this.planets = response.data;
         console.log(response.data);
       });
