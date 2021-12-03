@@ -21,6 +21,10 @@
     <router-link v-bind:to="`/systems/${system.id}/edit`">
       <button>Edit System</button>
     </router-link>
+    <p></p>
+    <router-link v-bind:to="`/NewPlanet/${system.id}`">
+      <button>Add a Planet</button>
+    </router-link>
   </div>
 </template>
 

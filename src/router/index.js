@@ -10,6 +10,7 @@ import NewSystem from "../views/NewSystem.vue";
 import SystemShow from "../views/SystemShow.vue";
 import SystemEdit from "../views/SystemEdit.vue";
 import PlanetShow from "../views/PlanetShow.vue";
+import NewPlanet from "../views/NewPlanet.vue";
 
 Vue.use(VueRouter);
 
@@ -63,6 +64,11 @@ const routes = [
     path: "/planets/:id",
     name: "PlanetShow",
     component: PlanetShow,
+  },
+  {
+    path: "/NewPlanet/:id",
+    name: "NewPlanet",
+    component: NewPlanet,
   },
 ];
 
