@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import Example from "../views/Example.vue";
 import SystemIndex from "../views/SystemIndex.vue";
 import NewSystem from "../views/NewSystem.vue";
+import SystemShow from "../views/SystemShow.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const routes = [
     path: "/NewSystem",
     name: "NewSystem",
     component: NewSystem,
+  },
+  {
+    path: "/systems/:id",
+    name: "SystemShow",
+    component: SystemShow,
   },
 ];
 

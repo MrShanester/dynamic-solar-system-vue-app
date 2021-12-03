@@ -2,7 +2,9 @@
   <div class="systemindex">
     <h1>Hello, {{ this.name }}</h1>
     <div v-for="system in systems" v-bind:key="system.id">
-      <h2>{{ system.name }}</h2>
+      <router-link v-bind:to="`/systems/${system.id}`">
+        <h2>{{ system.name }}</h2>
+      </router-link>
     </div>
     <router-link v-bind:to="`/NewSystem`">
       <button>Create New System</button>
