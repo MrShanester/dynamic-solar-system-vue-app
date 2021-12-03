@@ -6,6 +6,9 @@
     <router-link v-bind:to="`/SystemIndex`">
       <button>Home</button>
     </router-link>
+    <router-link v-bind:to="`/systems/${system.id}/edit`">
+      <button>Edit System</button>
+    </router-link>
   </div>
 </template>
 
