@@ -24,11 +24,6 @@
         <input type="integer" v-model="newPlanetParams.mass" />
       </div>
       <div>
-        <label>Orbital Distance in AU:</label>
-        <p></p>
-        <input type="integer" v-model="newPlanetParams.orbital_distance" />
-      </div>
-      <div>
         <label>Description:</label>
         <p></p>
         <input type="string" v-model="newPlanetParams.description" />
@@ -41,7 +36,7 @@
       <p></p>
       <button class="bn30" v-on:click="createPlanet()">Create</button>
       <p></p>
-      <button class="bn30" v-on:click="home()">Back</button>
+      <button class="bn30" v-on:click="$router.go(-1)">Back</button>
     </form>
   </div>
 </template>

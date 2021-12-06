@@ -13,6 +13,7 @@ import PlanetShow from "../views/PlanetShow.vue";
 import NewPlanet from "../views/NewPlanet.vue";
 import PlanetEdit from "../views/PlanetEdit.vue";
 import NewStar from "../views/NewStar.vue";
+import Orrery from "../views/Orrery.vue";
 
 Vue.use(VueRouter);
 
@@ -81,6 +82,11 @@ const routes = [
     path: "/NewStar/:id",
     name: "NewStar",
     component: NewStar,
+  },
+  {
+    path: "/Orrery/:id",
+    name: "Orrery",
+    component: Orrery,
   },
 ];
 
