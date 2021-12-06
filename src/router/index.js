@@ -12,6 +12,7 @@ import SystemEdit from "../views/SystemEdit.vue";
 import PlanetShow from "../views/PlanetShow.vue";
 import NewPlanet from "../views/NewPlanet.vue";
 import PlanetEdit from "../views/PlanetEdit.vue";
+import NewStar from "../views/NewStar.vue";
 
 Vue.use(VueRouter);
 
@@ -75,6 +76,11 @@ const routes = [
     path: "/planets/:id/edit",
     name: "PlanetEdit",
     component: PlanetEdit,
+  },
+  {
+    path: "/NewStar/:id",
+    name: "NewStar",
+    component: NewStar,
   },
 ];
 
