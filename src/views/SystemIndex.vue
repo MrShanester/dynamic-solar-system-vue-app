@@ -23,13 +23,14 @@
             </div>
           </div>
         </div>
-        <div class="btns">
-          <router-link v-bind:to="`/NewSystem`">
-            <a class="btn-menu animated fadeInUp scrollto">Create New System</a>
-          </router-link>
-        </div>
       </div>
     </section>
+    <p></p>
+    <div class="btns">
+      <router-link v-bind:to="`/NewSystem`">
+        <a class="bn30">Create New System</a>
+      </router-link>
+    </div>
     <p></p>
     <p></p>
     <p></p>

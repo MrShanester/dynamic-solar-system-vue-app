@@ -24,9 +24,9 @@
         <input type="string" v-model="newSystemParams.image" />
       </div>
       <p></p>
-      <button v-on:click="createSystem()">Create</button>
+      <button class="bn30" v-on:click="createSystem()">Create</button>
       <p></p>
-      <button v-on:click="home()">Back</button>
+      <button class="bn30" v-on:click="home()">Back</button>
     </form>
   </div>
 </template>

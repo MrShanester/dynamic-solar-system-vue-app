@@ -39,9 +39,9 @@
         <input type="string" v-model="newPlanetParams.image" />
       </div>
       <p></p>
-      <button v-on:click="createPlanet()">Create</button>
+      <button class="bn30" v-on:click="createPlanet()">Create</button>
       <p></p>
-      <button v-on:click="home()">Back</button>
+      <button class="bn30" v-on:click="home()">Back</button>
     </form>
   </div>
 </template>

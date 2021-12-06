@@ -1,7 +1,7 @@
 <template>
   <div class="currentSystem">
     <form v-on:submit.prevent="">
-      <h1>Update, as you will.</h1>
+      <h1>Change is the natural state of the Universe.</h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -12,7 +12,7 @@
       </div>
       <p></p>
       <div>
-        <label>Description::</label>
+        <label>Description:</label>
         <p></p>
         <input type="string" v-model="currentSystemParams.description" />
         <p></p>
@@ -24,11 +24,11 @@
         <input type="string" v-model="currentSystemParams.image" />
       </div>
       <p></p>
-      <button v-on:click="currentSystem()">Update</button>
+      <button class="bn30" v-on:click="currentSystem()">Update</button>
       <p></p>
-      <button v-on:click="deleteSystem()">Delete System</button>
+      <button class="bn30" v-on:click="deleteSystem()">Delete System</button>
       <p></p>
-      <button v-on:click="home()">Back</button>
+      <button class="bn30" v-on:click="$router.go(-1)">Back</button>
     </form>
   </div>
 </template>

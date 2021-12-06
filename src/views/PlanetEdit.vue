@@ -39,11 +39,11 @@
         <input type="string" v-model="currentPlanetParams.image" />
       </div>
       <p></p>
-      <button v-on:click="currentPlanet()">Update</button>
+      <button class="bn30" v-on:click="currentPlanet()">Update</button>
       <p></p>
-      <button v-on:click="deletePlanet()">Delete Planet</button>
+      <button class="bn30" v-on:click="deletePlanet()">Delete Planet</button>
       <p></p>
-      <button v-on:click="home()">Back</button>
+      <button class="bn30" v-on:click="$router.go(-1)">Back</button>
     </form>
   </div>
 </template>
