@@ -15,38 +15,40 @@
           <p>View or Edit Planets</p>
         </div>
         <div v-for="planet in planets" v-bind:key="planet.id">
-          <div class="row" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-3">
-              <ul class="nav nav-tabs flex-column">
-                <li class="nav-item">
-                  <router-link v-bind:to="`/planets/${planet.id}`">
-                    <a class="nav-link active show" data-bs-toggle="tab">
-                      {{ planet.name }}
-                    </a>
-                  </router-link>
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-9 mt-4 mt-lg-0">
-              <div class="tab-content">
-                <div class="tab-pane active show" id="tab-1">
-                  <div class="row">
-                    <div class="col-lg-8 details order-2 order-lg-1">
-                      <router-link v-bind:to="`/planets/${planet.id}`">
-                        <h5 class="card-title">{{ planet.name }}</h5>
-                      </router-link>
-                      <p class="fst-italic">
-                        {{ planet.description }}
-                      </p>
-                    </div>
-                    <div class="col-lg-4 text-center order-1 order-lg-2">
-                      <img class="img-fluid" v-bind:src="planet.image" alt="" c />
+          <router-link v-bind:to="`/planets/${planet.id}`">
+            <div class="row" data-aos="fade-up" data-aos-delay="100">
+              <div class="col-lg-3">
+                <ul class="nav nav-tabs flex-column">
+                  <li class="nav-item">
+                    <router-link v-bind:to="`/planets/${planet.id}`">
+                      <a class="nav-link show" data-bs-toggle="tab">
+                        {{ planet.name }}
+                      </a>
+                    </router-link>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-9 mt-4 mt-lg-0">
+                <div class="tab-content">
+                  <div class="tab-pane active show" id="tab-1">
+                    <div class="row">
+                      <div class="col-lg-8 details order-2 order-lg-1">
+                        <router-link v-bind:to="`/planets/${planet.id}`">
+                          <h5 class="card-title">{{ planet.name }}</h5>
+                        </router-link>
+                        <p class="fst-italic">
+                          {{ planet.description }}
+                        </p>
+                      </div>
+                      <div class="col-lg-4 text-center order-1 order-lg-2">
+                        <img height="180" width="320" v-bind:src="planet.image" alt="" c />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </router-link>
         </div>
       </div>
     </section>

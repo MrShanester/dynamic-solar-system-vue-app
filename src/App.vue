@@ -21,6 +21,12 @@
   </div>
 </template>
 
+<style scoped>
+/* #header {
+  background-image: url("./assets/webb-dark.png");
+} */
+</style>
+
 <script>
 export default {
   data: function () {

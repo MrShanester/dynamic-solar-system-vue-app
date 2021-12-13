@@ -1,40 +1,42 @@
 <template>
-  <div class="systemindex">
-    <h1 id="header">Welcome, {{ this.name }}</h1>
-    <p></p>
-    <p></p>
+  <body>
+    <div class="systemindex">
+      <h1 id="header">Welcome, {{ this.name }}</h1>
+      <p></p>
+      <p></p>
 
-    <section id="menu" class="menu section-bg">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <!-- <h2>Menu</h2> -->
-          <p>Your Systems</p>
-        </div>
-        <div v-for="system in systems" v-bind:key="system.id">
-          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-6 menu-item">
-              <img v-bind:src="system.image" class="menu-img" v-bind:alt="`No Image`" />
-              <div class="menu-content">
-                <router-link v-bind:to="`/systems/${system.id}`">
-                  <a href="#">{{ system.name }}</a>
-                </router-link>
+      <section id="menu" class="menu section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <!-- <h2>Menu</h2> -->
+            <p>Your Systems</p>
+          </div>
+          <div v-for="system in systems" v-bind:key="system.id">
+            <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 menu-item">
+                <img v-bind:src="system.image" class="menu-img" v-bind:alt="`No Image`" />
+                <div class="menu-content">
+                  <router-link v-bind:to="`/systems/${system.id}`">
+                    <a href="#">{{ system.name }}</a>
+                  </router-link>
+                </div>
+                <div class="menu-ingredients">{{ system.description }}</div>
               </div>
-              <div class="menu-ingredients">{{ system.description }}</div>
             </div>
           </div>
         </div>
+      </section>
+      <p></p>
+      <div class="btns">
+        <router-link v-bind:to="`/NewSystem`">
+          <a class="bn30">Create New System</a>
+        </router-link>
       </div>
-    </section>
-    <p></p>
-    <div class="btns">
-      <router-link v-bind:to="`/NewSystem`">
-        <a class="bn30">Create New System</a>
-      </router-link>
+      <p></p>
+      <p></p>
+      <p></p>
     </div>
-    <p></p>
-    <p></p>
-    <p></p>
-  </div>
+  </body>
 </template>
 
 <style scoped>
