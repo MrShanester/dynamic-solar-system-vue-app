@@ -45,13 +45,6 @@ export default {
         this.planets = response.data;
         console.log(response.data[0].name);
 
-        response.data.forEach((planet) => {
-          if (planet.is_star === true) {
-            var central_star = planet.name;
-            console.log(central_star);
-          }
-        });
-
         //Initiate the render context
 
         // var elem = document.getElementById("canvas");
@@ -65,25 +58,33 @@ export default {
         sky.noStroke();
 
         //Define our planets and their colors
-        var sun = two.makeCircle(0, 0, 70);
+        var sun = two.makeCircle(0, 0, 60);
+
+        response.data.forEach ((planet) => {
+          var planet.name = two.makeCircle(planet.orbital_distance * 235, 0, 7)
+        });
 
         var mercury = two.makeCircle(95, 0, 7);
         var mercuryOrbit = two.makeCircle(0, 0, 95);
         mercuryOrbit.noFill();
         mercuryOrbit.linewidth = 1;
         mercuryOrbit.stroke = "#ccc";
-        var venus = two.makeCircle(125, 0, 8.5);
-        var earth = two.makeCircle(160, 0, 11.4);
-        var mars = two.makeCircle(200, 0, 9.5);
+        // var venus = two.makeCircle(125, 0, 8.5);
+        // var earth = two.makeCircle(160, 0, 11.4);
+        // var mars = two.makeCircle(200, 0, 9.5);
         var jupiter = two.makeCircle(260, 0, 28);
-        //      For Saturn we're going to do something special in order to get the rings
-        var saturnBody = two.makeCircle(320, 0, 24);
-        var saturnRings = two.makeCurve(296, 0, 290, 10, 322, 10, 350, -8, 342, -10, true);
-        saturnRings.rotation = 4.5;
-        var saturn = two.makeGroup(saturnBody, saturnRings);
-        var uranus = two.makeCircle(460, 0, 18);
-        var neptune = two.makeCircle(540, 0, 16);
-        var asteroid = two.makeCircle(0, 320, 3);
+        var jupiterOrbit = two.makeCircle(0, 0, 260);
+        jupiterOrbit.noFill();
+        jupiterOrbit.linewidth = 2;
+        jupiterOrbit.stroke = "#ccc";
+        // //      For Saturn we're going to do something special in order to get the rings
+        // var saturnBody = two.makeCircle(320, 0, 24);
+        // var saturnRings = two.makeCurve(296, 0, 290, 10, 322, 10, 350, -8, 342, -10, true);
+        // saturnRings.rotation = 4.5;
+        // var saturn = two.makeGroup(saturnBody, saturnRings);
+        // var uranus = two.makeCircle(460, 0, 18);
+        // var neptune = two.makeCircle(540, 0, 16);
+        // var asteroid = two.makeCircle(0, 320, 3);
 
         // Hover Over Features
 
@@ -92,13 +93,13 @@ export default {
         let highlight_1 = function () {
           response.data.forEach((planet) => {
             if (planet.is_star === true) {
-              var central_star = planet.name;
-              var sun_info = two.makeText(`${central_star}`, 450, 250);
+              var central_star = planet;
+              var sun_info = two.makeText(`${central_star.name}`, 450, 250);
               sun_info.size = 100;
               sun.fill = "red";
               let ignore_1 = function () {
                 two.remove(sun_info);
-                sun.fill = "yellow";
+                sun.fill = `${central_star.color}`;
               };
               sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
             }
@@ -114,9 +115,9 @@ export default {
             two.remove(sun_info);
             jupiter.fill = "orange";
           };
-          jupiter._renderer.elem.addEventListener("mouseout", ignore_2, false);
+          jupiterOrbit._renderer.elem.addEventListener("mouseout", ignore_2, false);
         };
-        jupiter._renderer.elem.addEventListener("mousemove", highlight_2, false);
+        jupiterOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
 
         // Stars
 
@@ -142,43 +143,48 @@ export default {
         }
 
         //Set the color of the planets
-        sun.fill = "#F7CA18";
+        response.data.forEach((planet) => {
+          if (planet.is_star === true) {
+            var star_color = planet.color;
+            sun.fill = `${star_color}`;
+          }
+        });
         mercury.fill = "#9E9E9E";
-        venus.fill = "#795548";
-        earth.fill = "#2196F3";
-        mars.fill = "#FF7043";
+        // venus.fill = "#795548";
+        // earth.fill = "#2196F3";
+        // mars.fill = "#FF7043";
         jupiter.fill = "#E67E22";
-        saturnBody.fill = "#A1887F";
-        saturnRings.stroke = "#F5F5F5";
-        saturnRings.linewidth = 7;
-        saturnRings.noFill();
-        saturn.translation.set(20, 0);
-        uranus.fill = "#4DB6AC";
-        neptune.fill = "#3F51B5";
+        // saturnBody.fill = "#A1887F";
+        // saturnRings.stroke = "#F5F5F5";
+        // saturnRings.linewidth = 7;
+        // saturnRings.noFill();
+        // saturn.translation.set(20, 0);
+        // uranus.fill = "#4DB6AC";
+        // neptune.fill = "#3F51B5";
         star.fill = "#FAFAFA";
-        asteroid.fill = "#FAFAFA";
+        // asteroid.fill = "#FAFAFA";
 
         //Group the planets
         var Mercury = two.makeGroup(mercury);
-        var Venus = two.makeGroup(venus);
-        var Earth = two.makeGroup(earth);
-        var Mars = two.makeGroup(mars);
+        // var Venus = two.makeGroup(venus);
+        // var Earth = two.makeGroup(earth);
+        // var Mars = two.makeGroup(mars);
         var Jupiter = two.makeGroup(jupiter);
-        var Saturn = two.makeGroup(saturn);
-        var Uranus = two.makeGroup(uranus);
-        var Neptune = two.makeGroup(neptune);
-        var planets = two.makeGroup(mercuryOrbit, sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune);
+        // var Saturn = two.makeGroup(saturn);
+        // var Uranus = two.makeGroup(uranus);
+        // var Neptune = two.makeGroup(neptune);
+        var planets = two.makeGroup(jupiterOrbit, mercuryOrbit, sun, Mercury, Jupiter);
 
         //Center everything in the center of the element
         planets.translation.set(two.width / 2, two.height / 2);
         Mercury.rotation = 4;
-        Venus.rotation = 2.5;
-        Earth.rotation = 5.5;
-        Mars.rotation = 1;
+        // Venus.rotation = 2.5;
+        // Earth.rotation = 5.5;
+        // Mars.rotation = 1;
         Jupiter.rotation = 4.2;
-        Saturn.rotation = 2.5;
-        Uranus.rotation = 5.75;
-        Neptune.rotation = 0.5;
+        // Saturn.rotation = 2.5;
+        // Uranus.rotation = 5.75;
+        // Neptune.rotation = 0.5;
 
         // var counter = document.getElementById("counter");
         // var count = 0;
@@ -192,22 +198,22 @@ export default {
 
             //Rotate all the planets
             Mercury.rotation += 0.01607;
-            Venus.rotation += 0.01174;
-            Earth.rotation += 0.01;
+            // Venus.rotation += 0.01174;
+            // Earth.rotation += 0.01;
             /* //Earth year counter (not currently accurate at all)
 	count++;
     if (count % 550 == 0) {
         yearsPassed++;
         counter.innerHTML = "An estimated " + yearsPassed + " Earth years passed";
     }; */
-            Mars.rotation += 0.00802;
+            // Mars.rotation += 0.00802;
             Jupiter.rotation += 0.00434;
-            Saturn.rotation += 0.00323;
-            Uranus.rotation += 0.00228;
-            Neptune.rotation += 0.00182;
+            // Saturn.rotation += 0.00323;
+            // Uranus.rotation += 0.00228;
+            // Neptune.rotation += 0.00182;
 
             //Rotate Saturn's rings so that it doesn't look dumb
-            saturnRings.rotation -= 0.01423;
+            // saturnRings.rotation -= 0.01423;
           })
           .play(); // Finally, start the animation loop
       });
