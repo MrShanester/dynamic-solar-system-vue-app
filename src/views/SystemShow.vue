@@ -70,6 +70,10 @@
     <router-link v-bind:to="`/NewStar/${system.id}`">
       <button class="bn30">Add a Star</button>
     </router-link>
+    <p></p>
+    <router-link v-bind:to="`/Orrery/${system.id}`">
+      <button class="bn30">View Orrery</button>
+    </router-link>
   </div>
 </template>
 

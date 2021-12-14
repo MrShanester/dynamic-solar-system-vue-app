@@ -13,6 +13,8 @@
           <!-- .navbar -->
           <div v-if="isLoggedIn()">
             <a href="/Logout" class="book-a-table-btn scrollto d-none d-lg-flex">Log Out</a>
+            <p></p>
+            <a href="/" class="book-a-table-btn scrollto d-none d-lg-flex">Home</a>
           </div>
         </div>
       </header>
