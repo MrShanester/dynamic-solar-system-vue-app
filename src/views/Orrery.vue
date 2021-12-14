@@ -66,7 +66,12 @@ export default {
 
         //Define our planets and their colors
         var sun = two.makeCircle(0, 0, 70);
+
         var mercury = two.makeCircle(95, 0, 7);
+        var mercuryOrbit = two.makeCircle(0, 0, 95);
+        mercuryOrbit.noFill();
+        mercuryOrbit.linewidth = 1;
+        mercuryOrbit.stroke = "#ccc";
         var venus = two.makeCircle(125, 0, 8.5);
         var earth = two.makeCircle(160, 0, 11.4);
         var mars = two.makeCircle(200, 0, 9.5);
@@ -88,7 +93,7 @@ export default {
           response.data.forEach((planet) => {
             if (planet.is_star === true) {
               var central_star = planet.name;
-              var sun_info = two.makeText(`${central_star}`, 250, 250);
+              var sun_info = two.makeText(`${central_star}`, 450, 250);
               sun_info.size = 100;
               sun.fill = "red";
               let ignore_1 = function () {
@@ -162,7 +167,7 @@ export default {
         var Saturn = two.makeGroup(saturn);
         var Uranus = two.makeGroup(uranus);
         var Neptune = two.makeGroup(neptune);
-        var planets = two.makeGroup(sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune);
+        var planets = two.makeGroup(mercuryOrbit, sun, Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune);
 
         //Center everything in the center of the element
         planets.translation.set(two.width / 2, two.height / 2);

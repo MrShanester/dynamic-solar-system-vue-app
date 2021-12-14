@@ -34,6 +34,11 @@
         <input type="string" v-model="newPlanetParams.description" />
       </div>
       <div>
+        <label>Planet Color:</label>
+        <p></p>
+        <input type="string" v-model="newPlanetParams.color" />
+      </div>
+      <div>
         <label>Image:</label>
         <p></p>
         <input type="string" v-model="newPlanetParams.image" />
@@ -67,6 +72,7 @@ export default {
         orbital_distance: 0,
         description: "",
         image: "",
+        color: "",
         is_star: false,
       },
       errors: [],

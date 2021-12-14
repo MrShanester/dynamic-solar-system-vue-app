@@ -34,6 +34,11 @@
         <input type="string" v-model="currentPlanetParams.description" />
       </div>
       <div>
+        <label>Color:</label>
+        <p></p>
+        <input type="string" v-model="currentPlanetParams.color" />
+      </div>
+      <div>
         <label>Image:</label>
         <p></p>
         <input type="string" v-model="currentPlanetParams.image" />
