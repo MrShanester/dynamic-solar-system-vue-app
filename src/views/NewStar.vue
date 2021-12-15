@@ -65,6 +65,7 @@ export default {
         diameter: 0,
         mass: 0,
         orbital_distance: 0,
+        orbital_period: 0,
         description: "",
         image: "",
         color: "",

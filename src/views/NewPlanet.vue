@@ -29,6 +29,11 @@
         <input type="integer" v-model="newPlanetParams.orbital_distance" />
       </div>
       <div>
+        <label>Orbital Period in Standard Days:</label>
+        <p></p>
+        <input type="integer" v-model="newPlanetParams.orbital_period" />
+      </div>
+      <div>
         <label>Description:</label>
         <p></p>
         <input type="string" v-model="newPlanetParams.description" />
@@ -70,6 +75,7 @@ export default {
         diameter: 0,
         mass: 0,
         orbital_distance: 0,
+        orbital_period: 0,
         description: "",
         image: "",
         color: "",
