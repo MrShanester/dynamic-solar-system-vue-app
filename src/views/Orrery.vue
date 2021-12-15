@@ -64,21 +64,21 @@ export default {
         sky.noStroke();
 
         //Define our planets and their colors
-        var sun = two.makeCircle(0, 0, 60);
+        var sun = two.makeCircle(0, 0, 75);
 
-        var planetOne = two.makeCircle(planet_list[1].orbital_distance * 235, 0, planet_list[1].diameter / 697);
+        var planetOne = two.makeCircle(planet_list[1].orbital_distance * 235, 0, planet_list[1].diameter / 2000);
         var planetOneOrbit = two.makeCircle(0, 0, planet_list[1].orbital_distance * 235);
         planetOneOrbit.noFill();
         planetOneOrbit.linewidth = 2;
         planetOneOrbit.stroke = "#ccc";
 
-        var planetTwo = two.makeCircle(planet_list[2].orbital_distance * 235, 0, planet_list[2].diameter / 697);
+        var planetTwo = two.makeCircle(planet_list[2].orbital_distance * 235, 0, planet_list[2].diameter / 2000);
         var planetTwoOrbit = two.makeCircle(0, 0, planet_list[2].orbital_distance * 235);
         planetTwoOrbit.noFill();
         planetTwoOrbit.linewidth = 2;
         planetTwoOrbit.stroke = "#ccc";
 
-        var planetThree = two.makeCircle(planet_list[3].orbital_distance * 235, 0, planet_list[2].diameter / 697);
+        var planetThree = two.makeCircle(planet_list[3].orbital_distance * 235, 0, planet_list[3].diameter / 2000);
         var planetThreeOrbit = two.makeCircle(0, 0, planet_list[3].orbital_distance * 235);
         planetThreeOrbit.noFill();
         planetThreeOrbit.linewidth = 2;
@@ -246,9 +246,13 @@ export default {
 
             //Rotate all the planets
             // Mercury.rotation += 88 / 36500;
-            PlanetOne.rotation += planet_list[1].orbital_period / 36500;
-            PlanetTwo.rotation += planet_list[2].orbital_period / 36500;
-            PlanetThree.rotation += planet_list[3].orbital_period / 36500;
+            var speedOne = planet_list[1].orbital_distance * 36500;
+            var speedTwo = planet_list[2].orbital_distance * 36500;
+            var speedThree = planet_list[3].orbital_distance * 36500;
+
+            PlanetOne.rotation += 365 / speedOne;
+            PlanetTwo.rotation += 365 / speedTwo;
+            PlanetThree.rotation += 365 / speedThree;
 
             // Venus.rotation += 0.01174;
             // Earth.rotation += 0.01;
