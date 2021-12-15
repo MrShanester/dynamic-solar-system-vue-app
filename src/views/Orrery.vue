@@ -41,7 +41,165 @@ export default {
           this.orreryFour();
         } else if (i === 3) {
           this.orreryThree();
+        } else if (i === 2) {
+          this.orreryTwo();
+        } else if (i === 1) {
+          this.orreryOne();
         }
+      });
+    },
+    orreryOne: function () {
+      // Get planet info
+      axios.get("/planets/index/" + this.$route.params.id).then((response) => {
+        this.planets = response.data;
+        let planet_list = response.data;
+        planet_list.sort((a, b) => (a.orbital_distance > b.orbital_distance ? 1 : -1));
+        planet_list.sort((a, b) => (a.is_star > b.is_star ? -1 : 1));
+        console.log(planet_list);
+
+        //Initiate the render context
+
+        var two = new Two({
+          fullscreen: true,
+        }).appendTo(document.body);
+
+        //Skybox
+        var sky = two.makeRectangle(two.width / 2, two.height / 2, two.width, two.height);
+        sky.fill = "#131e29";
+        sky.noStroke();
+
+        //Define our planets and their colors
+        var sun = two.makeCircle(960, 540, 75);
+
+        // Hover Over Features
+
+        two.update();
+
+        let highlight_1 = function () {
+          var central_star = planet_list[0];
+          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
+          sun_info.size = 100;
+          sun.fill = "red";
+          let ignore_1 = function () {
+            two.remove(sun_info);
+            sun.fill = `${central_star.color}`;
+          };
+          sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
+        };
+        sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
+
+        // Stars
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var star;
+        for (var i = 0; i < 200; i++) {
+          var randX = Math.round(Math.random() * width);
+          var randY = Math.round(Math.random() * height);
+          star = two.makeCircle(randX, randY, 2);
+        }
+
+        //Set the color of the planets
+        sun.fill = planet_list[0].color;
+        star.fill = "#FAFAFA";
+
+        two.bind("update", function () {}).play(); // Finally, start the animation loop
+      });
+    },
+    orreryTwo: function () {
+      // Get planet info
+      axios.get("/planets/index/" + this.$route.params.id).then((response) => {
+        this.planets = response.data;
+        let planet_list = response.data;
+        planet_list.sort((a, b) => (a.orbital_distance > b.orbital_distance ? 1 : -1));
+        planet_list.sort((a, b) => (a.is_star > b.is_star ? -1 : 1));
+        console.log(planet_list);
+
+        //Initiate the render context
+
+        var two = new Two({
+          fullscreen: true,
+        }).appendTo(document.body);
+
+        //Skybox
+        var sky = two.makeRectangle(two.width / 2, two.height / 2, two.width, two.height);
+        sky.fill = "#131e29";
+        sky.noStroke();
+
+        //Define our planets and their colors
+        var sun = two.makeCircle(0, 0, 75);
+
+        var planetOne = two.makeCircle(planet_list[1].orbital_distance * 235, 0, planet_list[1].diameter / 2000);
+        var planetOneOrbit = two.makeCircle(0, 0, planet_list[1].orbital_distance * 235);
+        planetOneOrbit.noFill();
+        planetOneOrbit.linewidth = 2;
+        planetOneOrbit.stroke = "#ccc";
+
+        // Hover Over Features
+
+        two.update();
+
+        let highlight_1 = function () {
+          var central_star = planet_list[0];
+          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
+          sun_info.size = 100;
+          sun.fill = "red";
+          let ignore_1 = function () {
+            two.remove(sun_info);
+            sun.fill = `${central_star.color}`;
+          };
+          sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
+        };
+        sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
+
+        let highlight_2 = function () {
+          var planetOneInfo = two.makeText(planet_list[1].name, 450, 250);
+          planetOneInfo.size = 100;
+          planetOne.fill = "red";
+          let ignore_2 = function () {
+            two.remove(planetOneInfo);
+            planetOne.fill = planet_list[1].color;
+          };
+          planetOneOrbit._renderer.elem.addEventListener("mouseout", ignore_2, false);
+        };
+        planetOneOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
+
+        // Stars
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var star;
+        for (var i = 0; i < 200; i++) {
+          var randX = Math.round(Math.random() * width);
+          var randY = Math.round(Math.random() * height);
+          star = two.makeCircle(randX, randY, 2);
+        }
+
+        //Set the color of the planets
+        sun.fill = planet_list[0].color;
+        planetOne.fill = planet_list[1].color;
+        star.fill = "#FAFAFA";
+
+        //Group the planets
+        var PlanetOne = two.makeGroup(planetOne);
+
+        var planets = two.makeGroup(planetOneOrbit, sun, PlanetOne);
+
+        //Center everything in the center of the element
+        planets.translation.set(two.width / 2, two.height / 2);
+        // Mercury.rotation = 4;
+        PlanetOne.rotation = 3;
+
+        // Bind a function to scale and rotate the group to the animation loop.
+        two
+          .bind("update", function () {
+            //Set the "ZOOM" of the system
+            planets.scale = 0.8;
+
+            //Rotate all the planets
+            var speedOne = planet_list[1].orbital_distance * 36500;
+
+            PlanetOne.rotation += 365 / speedOne;
+          })
+          .play(); // Finally, start the animation loop
       });
     },
     orreryThree: function () {
