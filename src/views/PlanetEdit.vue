@@ -29,6 +29,11 @@
         <input type="integer" v-model="currentPlanetParams.orbital_distance" />
       </div>
       <div>
+        <label>Orbital Period in Standard Days:</label>
+        <p></p>
+        <input type="integer" v-model="currentPlanetParams.orbital_period" />
+      </div>
+      <div>
         <label>Description:</label>
         <p></p>
         <input type="string" v-model="currentPlanetParams.description" />

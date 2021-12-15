@@ -45,6 +45,18 @@ export default {
           this.orreryTwo();
         } else if (i === 1) {
           this.orreryOne();
+        } else if (i === 5) {
+          this.orreryFive();
+        } else if (i === 6) {
+          this.orrerySix();
+        } else if (i === 7) {
+          this.orrerySeven();
+        } else if (i === 8) {
+          this.orreryEight();
+        } else if (i === 9) {
+          this.orreryNine();
+        } else if (i === 10) {
+          this.orreryTen();
         }
       });
     },
@@ -77,8 +89,8 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
-          sun_info.size = 100;
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          sun_info.size = 75;
           sun.fill = "red";
           let ignore_1 = function () {
             two.remove(sun_info);
@@ -140,8 +152,8 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
-          sun_info.size = 100;
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          sun_info.size = 75;
           sun.fill = "red";
           let ignore_1 = function () {
             two.remove(sun_info);
@@ -152,8 +164,8 @@ export default {
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
-          var planetOneInfo = two.makeText(planet_list[1].name, 450, 250);
-          planetOneInfo.size = 100;
+          var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
+          planetOneInfo.size = 75;
           planetOne.fill = "red";
           let ignore_2 = function () {
             two.remove(planetOneInfo);
@@ -243,8 +255,8 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
-          sun_info.size = 100;
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          sun_info.size = 75;
           sun.fill = "red";
           let ignore_1 = function () {
             two.remove(sun_info);
@@ -255,8 +267,8 @@ export default {
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
-          var planetOneInfo = two.makeText(planet_list[1].name, 450, 250);
-          planetOneInfo.size = 100;
+          var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
+          planetOneInfo.size = 75;
           planetOne.fill = "red";
           let ignore_2 = function () {
             two.remove(planetOneInfo);
@@ -267,8 +279,8 @@ export default {
         planetOneOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
 
         let highlight_3 = function () {
-          var planetTwoInfo = two.makeText(planet_list[2].name, 450, 250);
-          planetTwoInfo.size = 100;
+          var planetTwoInfo = two.makeText(planet_list[2].name, 350, 175);
+          planetTwoInfo.size = 75;
           planetTwo.fill = "red";
           let ignore_3 = function () {
             two.remove(planetTwoInfo);
@@ -386,8 +398,8 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 450, 250);
-          sun_info.size = 100;
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          sun_info.size = 75;
           sun.fill = "red";
           let ignore_1 = function () {
             two.remove(sun_info);
@@ -398,8 +410,8 @@ export default {
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
-          var planetOneInfo = two.makeText(planet_list[1].name, 450, 250);
-          planetOneInfo.size = 100;
+          var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
+          planetOneInfo.size = 75;
           planetOne.fill = "red";
           let ignore_2 = function () {
             two.remove(planetOneInfo);
@@ -410,8 +422,8 @@ export default {
         planetOneOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
 
         let highlight_3 = function () {
-          var planetTwoInfo = two.makeText(planet_list[2].name, 450, 250);
-          planetTwoInfo.size = 100;
+          var planetTwoInfo = two.makeText(planet_list[2].name, 350, 175);
+          planetTwoInfo.size = 75;
           planetTwo.fill = "red";
           let ignore_3 = function () {
             two.remove(planetTwoInfo);
@@ -422,8 +434,8 @@ export default {
         planetTwoOrbit._renderer.elem.addEventListener("mousemove", highlight_3, false);
 
         let highlight_4 = function () {
-          var planetThreeInfo = two.makeText(planet_list[3].name, 450, 250);
-          planetThreeInfo.size = 100;
+          var planetThreeInfo = two.makeText(planet_list[3].name, 350, 175);
+          planetThreeInfo.size = 75;
           planetThree.fill = "red";
           let ignore_4 = function () {
             two.remove(planetThreeInfo);
