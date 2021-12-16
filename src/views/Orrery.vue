@@ -93,12 +93,24 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
+          var box = two.makeRectangle(350, 200, 600, 150);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var sun_info = two.makeText(`${central_star.name}`, 350, 175, styles);
           sun_info.size = 75;
-          sun.fill = "red";
+          var sunMass = two.makeText(`Mass: ${central_star.mass} x 10^24 Kilos`, 350, 225, styles);
+          sunMass.size = 35;
+          var sunDiameter = two.makeText(`Diameter: ${central_star.diameter} Kilometers`, 350, 260, styles);
+          sunDiameter.size = 35;
+          sun.stroke = "#09C8E2";
+          sun.linewidth = 3;
           let ignore_1 = function () {
             two.remove(sun_info);
-            sun.fill = `${central_star.color}`;
+            two.remove(box);
+            two.remove(sunDiameter);
+            two.remove(sunMass);
+            sun.linewidth = 0;
+            sun.stroke = "black";
           };
           sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
         };
@@ -154,26 +166,67 @@ export default {
 
         two.update();
 
+        const styles = {
+          family: "Lexend Deca, sans-serif",
+        };
+
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          var box = two.makeRectangle(350, 200, 600, 150);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175, styles);
           sun_info.size = 75;
-          sun.fill = "red";
+          var sunMass = two.makeText(`Mass: ${central_star.mass} x 10^24 Kilos`, 350, 225, styles);
+          sunMass.size = 35;
+          var sunDiameter = two.makeText(`Diameter: ${central_star.diameter} Kilometers`, 350, 260, styles);
+          sunDiameter.size = 35;
+          sun.stroke = "#09C8E2";
+          sun.linewidth = 3;
           let ignore_1 = function () {
             two.remove(sun_info);
-            sun.fill = `${central_star.color}`;
+            two.remove(box);
+            two.remove(sunDiameter);
+            two.remove(sunMass);
+            sun.linewidth = 0;
+            sun.stroke = "black";
           };
           sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
         };
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
           planetOneInfo.size = 75;
-          planetOne.fill = "red";
+          var planetOneDistance = two.makeText(
+            `Orbital Distance: ${planet_list[1].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetOneDistance.size = 35;
+          var planetOnePeriod = two.makeText(`Orbital Period: ${planet_list[1].orbital_period} days`, 350, 260, styles);
+          planetOnePeriod.size = 35;
+          var planetOneDiameter = two.makeText(`Diameter: ${planet_list[1].diameter} Kilometers`, 350, 295, styles);
+          planetOneDiameter.size = 35;
+          var planetOneMass = two.makeText(`Mass: ${planet_list[1].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetOneMass.size = 35;
+          planetOneOrbit.stroke = "#09C8E2";
+          planetOne.stroke = "#09C8E2";
+          planetOne.linewidth = 3;
           let ignore_2 = function () {
             two.remove(planetOneInfo);
-            planetOne.fill = planet_list[1].color;
+            two.remove(box);
+            two.remove(planetOneDistance);
+            two.remove(planetOnePeriod);
+            two.remove(planetOneDiameter);
+            two.remove(planetOneMass);
+            planetOne.linewidth = 0;
+            planetOneOrbit.stroke = "white";
+            planetOne.stroke = "black";
           };
           planetOneOrbit._renderer.elem.addEventListener("mouseout", ignore_2, false);
         };
@@ -211,7 +264,7 @@ export default {
             planets.scale = 0.8;
 
             //Rotate all the planets
-            var speedOne = planet_list[1].orbital_distance * 36500;
+            var speedOne = planet_list[1].orbital_period * 100;
 
             PlanetOne.rotation += 365 / speedOne;
           })
@@ -257,38 +310,104 @@ export default {
 
         two.update();
 
+        const styles = {
+          family: "Lexend Deca, sans-serif",
+        };
+
         let highlight_1 = function () {
           var central_star = planet_list[0];
-          var sun_info = two.makeText(`${central_star.name}`, 350, 175);
+          var box = two.makeRectangle(350, 200, 600, 150);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
+          var sun_info = two.makeText(`${central_star.name}`, 350, 175, styles);
           sun_info.size = 75;
-          sun.fill = "red";
+          var sunMass = two.makeText(`Mass: ${central_star.mass} x 10^24 Kilos`, 350, 225, styles);
+          sunMass.size = 35;
+          var sunDiameter = two.makeText(`Diameter: ${central_star.diameter} Kilometers`, 350, 260, styles);
+          sunDiameter.size = 35;
+          sun.stroke = "#09C8E2";
+          sun.linewidth = 3;
           let ignore_1 = function () {
             two.remove(sun_info);
-            sun.fill = `${central_star.color}`;
+            two.remove(box);
+            two.remove(sunDiameter);
+            two.remove(sunMass);
+            sun.linewidth = 0;
+            sun.stroke = "black";
           };
           sun._renderer.elem.addEventListener("mouseout", ignore_1, false);
         };
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
           planetOneInfo.size = 75;
-          planetOne.fill = "red";
+          var planetOneDistance = two.makeText(
+            `Orbital Distance: ${planet_list[1].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetOneDistance.size = 35;
+          var planetOnePeriod = two.makeText(`Orbital Period: ${planet_list[1].orbital_period} days`, 350, 260, styles);
+          planetOnePeriod.size = 35;
+          var planetOneDiameter = two.makeText(`Diameter: ${planet_list[1].diameter} Kilometers`, 350, 295, styles);
+          planetOneDiameter.size = 35;
+          var planetOneMass = two.makeText(`Mass: ${planet_list[1].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetOneMass.size = 35;
+          planetOneOrbit.stroke = "#09C8E2";
+          planetOne.stroke = "#09C8E2";
+          planetOne.linewidth = 3;
           let ignore_2 = function () {
             two.remove(planetOneInfo);
-            planetOne.fill = planet_list[1].color;
+            two.remove(box);
+            two.remove(planetOneDistance);
+            two.remove(planetOnePeriod);
+            two.remove(planetOneDiameter);
+            two.remove(planetOneMass);
+            planetOne.linewidth = 0;
+            planetOneOrbit.stroke = "white";
+            planetOne.stroke = "black";
           };
           planetOneOrbit._renderer.elem.addEventListener("mouseout", ignore_2, false);
         };
         planetOneOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
 
         let highlight_3 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetTwoInfo = two.makeText(planet_list[2].name, 350, 175);
           planetTwoInfo.size = 75;
-          planetTwo.fill = "red";
+          var planetTwoDistance = two.makeText(
+            `Orbital Distance: ${planet_list[2].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetTwoDistance.size = 35;
+          var planetTwoPeriod = two.makeText(`Orbital Period: ${planet_list[2].orbital_period} days`, 350, 260, styles);
+          planetTwoPeriod.size = 35;
+          var planetTwoDiameter = two.makeText(`Diameter: ${planet_list[2].diameter} Kilometers`, 350, 295, styles);
+          planetTwoDiameter.size = 35;
+          var planetTwoMass = two.makeText(`Mass: ${planet_list[2].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetTwoMass.size = 35;
+          planetTwoOrbit.stroke = "#09C8E2";
+          planetTwo.stroke = "#09C8E2";
+          planetTwo.linewidth = 3;
           let ignore_3 = function () {
             two.remove(planetTwoInfo);
-            planetTwo.fill = planet_list[2].color;
+            two.remove(box);
+            two.remove(planetTwoDistance);
+            two.remove(planetTwoPeriod);
+            two.remove(planetTwoDiameter);
+            two.remove(planetTwoMass);
+            planetTwo.linewidth = 0;
+            planetTwoOrbit.stroke = "white";
+            planetTwo.stroke = "black";
           };
           planetTwoOrbit._renderer.elem.addEventListener("mouseout", ignore_3, false);
         };
@@ -329,8 +448,8 @@ export default {
             planets.scale = 0.8;
 
             //Rotate all the planets
-            var speedOne = planet_list[1].orbital_distance * 36500;
-            var speedTwo = planet_list[2].orbital_distance * 36500;
+            var speedOne = planet_list[1].orbital_period * 100;
+            var speedTwo = planet_list[2].orbital_period * 100;
 
             PlanetOne.rotation += 365 / speedOne;
             PlanetTwo.rotation += 365 / speedTwo;
@@ -406,12 +525,22 @@ export default {
 
         let highlight_1 = function () {
           var central_star = planet_list[0];
+          var box = two.makeRectangle(350, 200, 600, 150);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var sun_info = two.makeText(`${central_star.name}`, 350, 175, styles);
           sun_info.size = 75;
+          var sunMass = two.makeText(`Mass: ${central_star.mass} x 10^24 Kilos`, 350, 225, styles);
+          sunMass.size = 35;
+          var sunDiameter = two.makeText(`Diameter: ${central_star.diameter} Kilometers`, 350, 260, styles);
+          sunDiameter.size = 35;
           sun.stroke = "#09C8E2";
           sun.linewidth = 3;
           let ignore_1 = function () {
             two.remove(sun_info);
+            two.remove(box);
+            two.remove(sunDiameter);
+            two.remove(sunMass);
             sun.linewidth = 0;
             sun.stroke = "black";
           };
@@ -420,13 +549,34 @@ export default {
         sun._renderer.elem.addEventListener("mousemove", highlight_1, false);
 
         let highlight_2 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetOneInfo = two.makeText(planet_list[1].name, 350, 175);
           planetOneInfo.size = 75;
+          var planetOneDistance = two.makeText(
+            `Orbital Distance: ${planet_list[1].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetOneDistance.size = 35;
+          var planetOnePeriod = two.makeText(`Orbital Period: ${planet_list[1].orbital_period} days`, 350, 260, styles);
+          planetOnePeriod.size = 35;
+          var planetOneDiameter = two.makeText(`Diameter: ${planet_list[1].diameter} Kilometers`, 350, 295, styles);
+          planetOneDiameter.size = 35;
+          var planetOneMass = two.makeText(`Mass: ${planet_list[1].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetOneMass.size = 35;
           planetOneOrbit.stroke = "#09C8E2";
           planetOne.stroke = "#09C8E2";
           planetOne.linewidth = 3;
           let ignore_2 = function () {
             two.remove(planetOneInfo);
+            two.remove(box);
+            two.remove(planetOneDistance);
+            two.remove(planetOnePeriod);
+            two.remove(planetOneDiameter);
+            two.remove(planetOneMass);
             planetOne.linewidth = 0;
             planetOneOrbit.stroke = "white";
             planetOne.stroke = "black";
@@ -436,13 +586,34 @@ export default {
         planetOneOrbit._renderer.elem.addEventListener("mousemove", highlight_2, false);
 
         let highlight_3 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetTwoInfo = two.makeText(planet_list[2].name, 350, 175);
           planetTwoInfo.size = 75;
+          var planetTwoDistance = two.makeText(
+            `Orbital Distance: ${planet_list[2].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetTwoDistance.size = 35;
+          var planetTwoPeriod = two.makeText(`Orbital Period: ${planet_list[2].orbital_period} days`, 350, 260, styles);
+          planetTwoPeriod.size = 35;
+          var planetTwoDiameter = two.makeText(`Diameter: ${planet_list[2].diameter} Kilometers`, 350, 295, styles);
+          planetTwoDiameter.size = 35;
+          var planetTwoMass = two.makeText(`Mass: ${planet_list[2].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetTwoMass.size = 35;
           planetTwoOrbit.stroke = "#09C8E2";
           planetTwo.stroke = "#09C8E2";
           planetTwo.linewidth = 3;
           let ignore_3 = function () {
             two.remove(planetTwoInfo);
+            two.remove(box);
+            two.remove(planetTwoDistance);
+            two.remove(planetTwoPeriod);
+            two.remove(planetTwoDiameter);
+            two.remove(planetTwoMass);
             planetTwo.linewidth = 0;
             planetTwoOrbit.stroke = "white";
             planetTwo.stroke = "black";
@@ -452,13 +623,39 @@ export default {
         planetTwoOrbit._renderer.elem.addEventListener("mousemove", highlight_3, false);
 
         let highlight_4 = function () {
+          var box = two.makeRectangle(350, 240, 600, 235);
+          box.fill = "white";
+          box.stroke = "#09C8E2";
           var planetThreeInfo = two.makeText(planet_list[3].name, 350, 175);
           planetThreeInfo.size = 75;
+          var planetThreeDistance = two.makeText(
+            `Orbital Distance: ${planet_list[3].orbital_distance} AU`,
+            350,
+            225,
+            styles
+          );
+          planetThreeDistance.size = 35;
+          var planetThreePeriod = two.makeText(
+            `Orbital Period: ${planet_list[3].orbital_period} days`,
+            350,
+            260,
+            styles
+          );
+          planetThreePeriod.size = 35;
+          var planetThreeDiameter = two.makeText(`Diameter: ${planet_list[3].diameter} Kilometers`, 350, 295, styles);
+          planetThreeDiameter.size = 35;
+          var planetThreeMass = two.makeText(`Mass: ${planet_list[3].mass} x 10^24 Kilos`, 350, 330, styles);
+          planetThreeMass.size = 35;
           planetThreeOrbit.stroke = "#09C8E2";
           planetThree.stroke = "#09C8E2";
           planetThree.linewidth = 3;
           let ignore_4 = function () {
             two.remove(planetThreeInfo);
+            two.remove(box);
+            two.remove(planetThreeDistance);
+            two.remove(planetThreePeriod);
+            two.remove(planetThreeDiameter);
+            two.remove(planetThreeMass);
             planetThree.linewidth = 0;
             planetThreeOrbit.stroke = "white";
             planetThree.stroke = "black";
@@ -560,9 +757,9 @@ export default {
 
             //Rotate all the planets
             // Mercury.rotation += 88 / 36500;
-            var speedOne = planet_list[1].orbital_distance * 36500;
-            var speedTwo = planet_list[2].orbital_distance * 36500;
-            var speedThree = planet_list[3].orbital_distance * 36500;
+            var speedOne = planet_list[1].orbital_period * 100;
+            var speedTwo = planet_list[2].orbital_period * 100;
+            var speedThree = planet_list[3].orbital_period * 100;
 
             PlanetOne.rotation += 365 / speedOne;
             PlanetTwo.rotation += 365 / speedTwo;
