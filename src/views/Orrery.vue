@@ -2312,7 +2312,7 @@ export default {
             var speedFour = planet_list[4].orbital_period * 100;
             var speedFive = planet_list[5].orbital_period * 100;
             var speedSix = planet_list[6].orbital_period * 100;
-            var speedSeven = planet_list[6].orbital_period * 100;
+            var speedSeven = planet_list[7].orbital_period * 100;
 
             PlanetOne.rotation += 365 / speedOne;
             PlanetTwo.rotation += 365 / speedTwo;
