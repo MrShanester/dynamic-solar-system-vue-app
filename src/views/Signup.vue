@@ -1,42 +1,62 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Username:</label>
-        <p></p>
-        <input type="text" v-model="newUserParams.username" />
+    <div class="flex-container">
+      <div class="content-container">
+        <div class="form-container">
+          <div class="form-container">
+            <form v-on:submit.prevent="submit()">
+              <h1>
+                Sign
+                <span class="cool">up</span>
+              </h1>
+              <br />
+              <ul>
+                <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+              </ul>
+              <div>
+                <span class="subtitle">USERNAME:</span>
+                <p></p>
+                <input type="text" v-model="newUserParams.username" />
+              </div>
+              <p></p>
+              <div>
+                <span class="subtitle">EMAIL:</span>
+                <p></p>
+                <input type="email" v-model="newUserParams.email" />
+              </div>
+              <p></p>
+              <div>
+                <span class="subtitle">PASSWORD:</span>
+                <p></p>
+                <input type="password" v-model="newUserParams.password" />
+              </div>
+              <p></p>
+              <div>
+                <span class="subtitle">PASSWORD CONFIRMATION:</span>
+                <p></p>
+                <input type="password" v-model="newUserParams.password_confirmation" />
+                <p></p>
+              </div>
+              <input class="classy" type="submit" value="Sign-Up" />
+            </form>
+          </div>
+        </div>
       </div>
-      <p></p>
-      <div>
-        <label>Email:</label>
-        <p></p>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <p></p>
-      <div>
-        <label>Password:</label>
-        <p></p>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <p></p>
-      <div>
-        <label>Password confirmation:</label>
-        <p></p>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-        <p></p>
-      </div>
-      <input class="classy" type="submit" value="Sign-Up" />
-    </form>
+    </div>
   </div>
 </template>
 
 <style scoped>
+h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.cool {
+  color: #645ad4;
+}
+
 .signup {
-  margin-top: 125px;
+  margin-top: 150px;
   text-align: center;
   color: whitesmoke;
 }
@@ -50,6 +70,27 @@
 .classy:hover {
   background: #645ad4;
   color: #fff;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 700px;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background: #1f1f1f;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
 }
 </style>
 

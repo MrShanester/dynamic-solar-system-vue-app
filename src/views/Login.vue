@@ -29,13 +29,14 @@
             <br />
             <br />
 
-            <button class="submit-btn" v-on:click="submit()">Log In</button>
+            <input class="classy" type="submit" value="Log In" />
             <br />
 
             <br />
-
-            <button class="submit-btn" v-on:click="signUp()">Sign-Up</button>
           </form>
+          <router-link v-bind:to="`/Signup`">
+            <input class="classy" type="submit" value="Sign Up" />
+          </router-link>
         </div>
       </div>
     </div>
@@ -58,9 +59,7 @@ h1 {
 }
 .classy {
   border: 2px solid #645ad4;
-  border-radius: 75px;
-  width: 80px;
-  height: 80px;
+  border-radius: 50px;
   background: #201f21;
   color: #fff;
   font-family: "Open Sans", sans-serif;
@@ -77,6 +76,27 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 500px;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background: #1f1f1f;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
 }
 </style>
 
