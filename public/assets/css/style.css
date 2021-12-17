@@ -916,20 +916,20 @@ section {
   transition: 0.3s;
   color: #fff;
   border-radius: 0;
-  border-right: 2px solid #cda45e;
+  border-right: 2px solid #645ad4;
   font-weight: 600;
   font-size: 15px;
 }
 .specials .nav-link:hover {
-  color: #cda45e;
+  color: #645ad4;
 }
 .specials .nav-link.active {
   color: #1a1814;
-  background: #cda45e;
-  border-color: #cda45e;
+  background: #645ad4;
+  border-color: #645ad4;
 }
 .specials .nav-link:hover {
-  border-color: #cda45e;
+  border-color: #645ad4;
 }
 .specials .tab-pane.active {
   -webkit-animation: fadeIn 0.5s ease-out;
