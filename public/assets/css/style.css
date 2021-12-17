@@ -609,7 +609,7 @@ section {
 }
 
 .section-bg {
-  background-color: #1a1814;
+  background-color: #13121d;
 }
 
 .section-title {
@@ -875,7 +875,7 @@ section {
 }
 .menu .menu-content a {
   padding-right: 10px;
-  background: #1a1814;
+  background: #13121d;
   position: relative;
   z-index: 3;
   font-weight: 700;
@@ -883,10 +883,10 @@ section {
   transition: 0.3s;
 }
 .menu .menu-content a:hover {
-  color: #cda45e;
+  color: #645ad4;
 }
 .menu .menu-content span {
-  background: #1a1814;
+  background: #13121d;
   position: relative;
   z-index: 3;
   padding: 0 10px;
@@ -1643,8 +1643,6 @@ h1 {
   width: 500px;
   height: 500px;
 }
-
-
 
 .subtitle {
   font-size: 11px;

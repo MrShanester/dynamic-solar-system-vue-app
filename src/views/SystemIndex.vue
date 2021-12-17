@@ -1,7 +1,10 @@
 <template>
   <body>
     <div class="systemindex">
-      <h1 id="header">Welcome, {{ this.name }}</h1>
+      <h1>
+        Welcome,
+        <span class="span">{{ this.name }}</span>
+      </h1>
       <p></p>
       <p></p>
 
@@ -9,7 +12,7 @@
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <!-- <h2>Menu</h2> -->
-            <p>Your Systems</p>
+            <p class="top">Your Systems</p>
           </div>
           <div v-for="system in systems" v-bind:key="system.id">
             <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
@@ -27,6 +30,7 @@
         </div>
       </section>
       <p></p>
+      <br />
       <div class="btns">
         <router-link v-bind:to="`/NewSystem`">
           <a class="bn30">Create New System</a>
@@ -40,6 +44,18 @@
 </template>
 
 <style scoped>
+.top {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  margin-left: 50px;
+}
+.span {
+  color: #645ad4;
+}
 .systemindex {
   margin-top: 125px;
   text-align: center;
