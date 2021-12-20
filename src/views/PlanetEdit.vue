@@ -1,7 +1,11 @@
 <template>
   <div class="currentPlanet">
     <form v-on:submit.prevent="">
-      <h1>Update your planet.</h1>
+      <h1>
+        Update your
+        <span>planet</span>
+        .
+      </h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -34,11 +38,6 @@
         <input type="integer" v-model="currentPlanetParams.orbital_period" />
       </div>
       <div>
-        <label>Description:</label>
-        <p></p>
-        <input type="string" v-model="currentPlanetParams.description" />
-      </div>
-      <div>
         <label>Color:</label>
         <p></p>
         <input type="string" v-model="currentPlanetParams.color" />
@@ -47,6 +46,11 @@
         <label>Image:</label>
         <p></p>
         <input type="string" v-model="currentPlanetParams.image" />
+      </div>
+      <div>
+        <label>Description:</label>
+        <p></p>
+        <textarea type="string" v-model="currentPlanetParams.description" class="description" />
       </div>
       <p></p>
       <button class="bn30" v-on:click="currentPlanet()">Update</button>
@@ -62,6 +66,27 @@
 .currentPlanet {
   text-align: center;
   margin-top: 125px;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #645ad4;
+}
+
+.description {
+  width: 60%;
+  height: 150px;
+  resize: none;
+  border: 1px solid grey;
+  color: grey;
+  background: rgb(10, 10, 10);
+  padding: 12px 20px;
 }
 </style>
 
