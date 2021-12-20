@@ -23,7 +23,9 @@
     </router-link>
     <br />
     <p></p>
-    <button class="bn30" v-on:click="$router.go(-1)">Back</button>
+    <router-link v-bind:to="`/systems/${planet.system_id}`">
+      <button class="bn30">Back</button>
+    </router-link>
   </div>
 </template>
 
