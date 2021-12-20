@@ -1,7 +1,11 @@
 <template>
   <div class="newPlanet">
     <form v-on:submit.prevent="">
-      <h1>Add a planet.</h1>
+      <h1>
+        Add a
+        <span>planet</span>
+        .
+      </h1>
       <ul>
         <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
       </ul>
@@ -34,11 +38,6 @@
         <input type="integer" v-model="newPlanetParams.orbital_period" />
       </div>
       <div>
-        <label>Description:</label>
-        <p></p>
-        <input type="string" v-model="newPlanetParams.description" />
-      </div>
-      <div>
         <label>Planet Color:</label>
         <p></p>
         <input type="string" v-model="newPlanetParams.color" />
@@ -47,6 +46,11 @@
         <label>Image:</label>
         <p></p>
         <input type="string" v-model="newPlanetParams.image" />
+      </div>
+      <div>
+        <label>Description:</label>
+        <p></p>
+        <textarea type="string" v-model="newPlanetParams.description" class="description" />
       </div>
       <p></p>
       <button class="bn30" v-on:click="createPlanet()">Create</button>
@@ -60,6 +64,27 @@
 .newPlanet {
   text-align: center;
   margin-top: 125px;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+span {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: #645ad4;
+}
+
+.description {
+  width: 60%;
+  height: 150px;
+  resize: none;
+  border: 1px solid grey;
+  color: grey;
+  background: rgb(10, 10, 10);
+  padding: 12px 20px;
 }
 </style>
 
@@ -99,11 +124,11 @@ export default {
 
           console.log(error.response.data);
         });
-      this.$router.push("/SystemIndex");
+      this.$router.push(`/systems/${this.$route.params.id}`);
       location.reload();
     },
     home: function () {
-      this.$router.push("/SystemIndex");
+      this.$router.push(`/systems/${this.$route.params.id}`);
     },
   },
 };

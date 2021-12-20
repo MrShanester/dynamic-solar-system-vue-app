@@ -95,7 +95,7 @@ export default {
 
           console.log(error.response.data);
         });
-      this.$router.push("/SystemIndex");
+      this.$router.push(`/systems/${this.$route.params.id}`);
       location.reload();
     },
 
