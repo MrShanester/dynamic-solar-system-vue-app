@@ -19,7 +19,7 @@
             Planets
           </p>
         </div>
-        <div v-for="planet in planets" v-bind:key="planet.id">
+        <div v-for="planet in orderBy(planets, 'orbital_distance')" v-bind:key="planet.id">
           <router-link v-bind:to="`/planets/${planet.id}`">
             <div class="row" data-aos="fade-up" data-aos-delay="100">
               <div class="col-lg-3">
@@ -131,8 +131,11 @@ h2 {
 
 <script>
 import axios from "axios";
+import Vue2Filters from "vue2-filters";
 
 export default {
+  mixins: [Vue2Filters.mixin],
+
   data: function () {
     return {
       system: {},
