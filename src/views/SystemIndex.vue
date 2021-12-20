@@ -7,6 +7,7 @@
       </h1>
       <p></p>
       <p></p>
+      <br />
 
       <section id="menu" class="menu section-bg">
         <div class="container" data-aos="fade-up">
@@ -31,11 +32,11 @@
       </section>
       <p></p>
       <br />
-      <div class="btns">
-        <router-link v-bind:to="`/NewSystem`">
-          <a class="bn30">Create New System</a>
-        </router-link>
-      </div>
+
+      <router-link v-bind:to="`/NewSystem`">
+        <button class="bn30">Create New System</button>
+      </router-link>
+
       <p></p>
       <p></p>
       <p></p>
