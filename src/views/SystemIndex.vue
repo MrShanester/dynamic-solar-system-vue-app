@@ -1,45 +1,47 @@
 <template>
-  <body>
+  <body id="cool">
     <div class="systemindex">
-      <h1>
-        Welcome,
-        <span class="span">{{ this.name }}</span>
-      </h1>
-      <p></p>
-      <p></p>
-      <br />
+      <div class="margin">
+        <h1>
+          Welcome,
+          <span class="span">{{ this.name }}</span>
+        </h1>
+        <p></p>
+        <p></p>
+        <br />
 
-      <section id="menu" class="menu section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <!-- <h2>Menu</h2> -->
-            <p class="top">Your Systems</p>
-          </div>
-          <div v-for="system in systems" v-bind:key="system.id">
-            <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-6 menu-item">
-                <img v-bind:src="system.image" class="menu-img" v-bind:alt="`No Image`" />
-                <div class="menu-content">
-                  <router-link v-bind:to="`/systems/${system.id}`">
-                    <a href="#">{{ system.name }}</a>
-                  </router-link>
+        <section id="menu" class="menu section-bg">
+          <div class="container" data-aos="fade-up">
+            <div class="section-title">
+              <!-- <h2>Menu</h2> -->
+              <p class="top">Your Systems</p>
+            </div>
+            <div v-for="system in systems" v-bind:key="system.id">
+              <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-6 menu-item">
+                  <img v-bind:src="system.image" class="menu-img" v-bind:alt="`No Image`" />
+                  <div class="menu-content">
+                    <router-link v-bind:to="`/systems/${system.id}`">
+                      <a href="#">{{ system.name }}</a>
+                    </router-link>
+                  </div>
+                  <div class="menu-ingredients">{{ system.description }}</div>
                 </div>
-                <div class="menu-ingredients">{{ system.description }}</div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <p></p>
-      <br />
+        </section>
+        <p></p>
+        <br />
 
-      <router-link v-bind:to="`/NewSystem`">
-        <button class="bn30">Create New System</button>
-      </router-link>
+        <router-link v-bind:to="`/NewSystem`">
+          <button class="bn30">Create New System</button>
+        </router-link>
 
-      <p></p>
-      <p></p>
-      <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+      </div>
     </div>
   </body>
 </template>
@@ -58,7 +60,6 @@ h1 {
   color: #645ad4;
 }
 .systemindex {
-  margin-top: 125px;
   text-align: center;
   color: whitesmoke;
 }
@@ -67,6 +68,20 @@ h1 {
   margin-left: 100px;
   text-align: left;
   color: wheat;
+}
+
+#cool {
+  width: 100%;
+  height: 100vh;
+  background: url("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    top center;
+  background-size: cover;
+  position: relative;
+  padding: 0;
+}
+
+.margin {
+  padding-top: 125px;
 }
 </style>
 
