@@ -8,6 +8,14 @@
     <h2>{{ system.description }}</h2>
     <p></p>
     <p></p>
+    <br />
+    <router-link v-bind:to="`/NewPlanet/${system.id}`">
+      <button class="bn30">Add a Planet</button>
+    </router-link>
+    ||
+    <router-link v-bind:to="`/NewStar/${system.id}`">
+      <button class="bn30">Add a Star</button>
+    </router-link>
 
     <section id="specials" class="specials">
       <div class="container" data-aos="fade-up">
@@ -57,28 +65,22 @@
         </div>
       </div>
     </section>
+    <div class="btn-pretty">
+      <p></p>
+      <router-link v-bind:to="`/SystemIndex`">
+        <button class="bn30">Home</button>
+      </router-link>
+      <p></p>
 
-    <p></p>
-    <router-link v-bind:to="`/SystemIndex`">
-      <button class="bn30">Home</button>
-    </router-link>
-    <p></p>
+      <router-link v-bind:to="`/systems/${system.id}/edit`">
+        <button class="bn30">Edit System</button>
+      </router-link>
 
-    <router-link v-bind:to="`/systems/${system.id}/edit`">
-      <button class="bn30">Edit System</button>
-    </router-link>
-    <p></p>
-    <router-link v-bind:to="`/NewPlanet/${system.id}`">
-      <button class="bn30">Add a Planet</button>
-    </router-link>
-    |
-    <router-link v-bind:to="`/NewStar/${system.id}`">
-      <button class="bn30">Add a Star</button>
-    </router-link>
-    <p></p>
-    <router-link v-bind:to="`/Orrery/${system.id}`">
-      <button class="bn30">View Orrery</button>
-    </router-link>
+      <p></p>
+      <router-link v-bind:to="`/Orrery/${system.id}`">
+        <button class="bn30">View Orrery</button>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -96,8 +98,6 @@ h1 {
 
 h2 {
   font-family: "Poppins", sans-serif;
-  text-align: center;
-  margin-left: 50px;
 }
 
 .special {
@@ -126,6 +126,10 @@ h2 {
   margin-top: 125px;
   text-align: center;
   color: whitesmoke;
+}
+
+.btn-pretty {
+  padding-bottom: 50px;
 }
 </style>
 
