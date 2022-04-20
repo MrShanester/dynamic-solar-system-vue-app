@@ -37,6 +37,11 @@
           <router-link v-bind:to="`/Signup`">
             <input class="classy" type="submit" value="Sign Up" />
           </router-link>
+          <br />
+          <br />
+          <p>Log In to an Example Account to See Pre-Built Systems</p>
+          <p>Email: shane@example.com</p>
+          <p>Password: 1234</p>
         </div>
       </div>
     </div>
