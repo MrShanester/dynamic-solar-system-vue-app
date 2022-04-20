@@ -1,0 +1,14 @@
+/
+/Signup
+/Login
+/Logout
+/Example
+/SystemIndex
+/NewSystem
+/systems/:id
+/systems/:id/edit
+/planets/:id
+/NewPlanet/:id
+/planets/:id/edit
+/NewStar/:id
+/Orrery/:id
