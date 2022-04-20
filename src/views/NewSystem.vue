@@ -81,7 +81,7 @@ export default {
   methods: {
     createSystem: function () {
       axios
-        .post("/systems", this.newSystemParams)
+        .post("https://dynamic-solar-system-app.herokuapp.com/systems", this.newSystemParams)
         .then((response) => {
           this.systems.push(response.data);
           console.log(response.data);

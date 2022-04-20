@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     planetShow: function () {
-      axios.get("/planets/" + this.$route.params.id).then((response) => {
+      axios.get("https://dynamic-solar-system-app.herokuapp.com/planets/" + this.$route.params.id).then((response) => {
         this.planet = response.data;
         console.log(response.data);
       });

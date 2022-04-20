@@ -152,16 +152,18 @@ export default {
   },
   methods: {
     systemShow: function () {
-      axios.get("/systems/" + this.$route.params.id).then((response) => {
+      axios.get("https://dynamic-solar-system-app.herokuapp.com/systems/" + this.$route.params.id).then((response) => {
         this.system = response.data;
         console.log(response.data);
       });
     },
     planetsShow: function () {
-      axios.get("/planets/index/" + this.$route.params.id).then((response) => {
-        this.planets = response.data;
-        console.log(response.data);
-      });
+      axios
+        .get("https://dynamic-solar-system-app.herokuapp.com/planets/index/" + this.$route.params.id)
+        .then((response) => {
+          this.planets = response.data;
+          console.log(response.data);
+        });
     },
   },
 };

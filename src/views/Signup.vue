@@ -107,7 +107,7 @@ export default {
   methods: {
     submit: function () {
       axios
-        .post("/users", this.newUserParams)
+        .post("https://dynamic-solar-system-app.herokuapp.com/users", this.newUserParams)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/login");

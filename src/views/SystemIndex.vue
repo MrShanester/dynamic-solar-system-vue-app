@@ -103,13 +103,13 @@ export default {
 
   methods: {
     getSystems: function () {
-      axios.get("/systems").then((response) => {
+      axios.get("https://dynamic-solar-system-app.herokuapp.com/systems").then((response) => {
         this.systems = response.data;
         console.log(response.data);
       });
     },
     getName: function () {
-      axios.get("/name").then((response) => {
+      axios.get("https://dynamic-solar-system-app.herokuapp.com/name").then((response) => {
         this.name = response.data;
         console.log(response.data);
       });

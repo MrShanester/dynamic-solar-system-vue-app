@@ -114,7 +114,7 @@ export default {
   methods: {
     createPlanet: function () {
       axios
-        .post("/planets", this.newPlanetParams)
+        .post("https://dynamic-solar-system-app.herokuapp.com/planets", this.newPlanetParams)
         .then((response) => {
           this.planets.push(response.data);
           console.log(response.data);

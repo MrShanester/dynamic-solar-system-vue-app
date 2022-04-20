@@ -85,7 +85,10 @@ export default {
   methods: {
     currentSystem: function () {
       axios
-        .patch("/systems/" + this.$route.params.id, this.currentSystemParams)
+        .patch(
+          "https://dynamic-solar-system-app.herokuapp.com/systems/" + this.$route.params.id,
+          this.currentSystemParams
+        )
         .then((response) => {
           this.systems.push(response.data);
           console.log(response.data);
@@ -100,15 +103,17 @@ export default {
     },
 
     systemLoad: function () {
-      axios.get("/systems/" + this.$route.params.id).then((response) => {
+      axios.get("https://dynamic-solar-system-app.herokuapp.com/systems/" + this.$route.params.id).then((response) => {
         this.currentSystemParams = response.data;
       });
     },
     deleteSystem: function () {
-      axios.delete("/systems/" + this.$route.params.id).then((response) => {
-        console.log("System destroyed", response.data);
-        this.$router.push("/SystemIndex");
-      });
+      axios
+        .delete("https://dynamic-solar-system-app.herokuapp.com/systems/" + this.$route.params.id)
+        .then((response) => {
+          console.log("System destroyed", response.data);
+          this.$router.push("/SystemIndex");
+        });
     },
   },
 };
