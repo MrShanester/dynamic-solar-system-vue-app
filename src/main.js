@@ -4,9 +4,11 @@ import router from "./router";
 import axios from "axios";
 import "two.js";
 
-//  https://dynamic-solar-system-app.herokuapp.com
+// http://localhost:3000
+// https://dynamic-solar-system-app.herokuapp.com
 
-axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "development" ? "https://dynamic-solar-system-app.herokuapp.com" : "/";
 var jwt = localStorage.getItem("jwt");
 if (jwt) {
   axios.defaults.headers.common["Authorization"] = "Bearer " + jwt;
